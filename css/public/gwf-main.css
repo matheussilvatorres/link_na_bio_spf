@@ -389,10 +389,7 @@
   display: flex;
   justify-content: center;
   padding: 20px;
-  background-color: #f0b37e;
-  background-image: url(https://agenciagrowify.com.br/wp-content/uploads/2025/12/unnamed-e1765214653360.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-color: #17BEBB;
 }
 .gwf-bio__holder {
   width: 800px;
@@ -456,7 +453,7 @@
   text-decoration: none;
 }
 .gwf-bio__social--icon {
-  color: #196090;
+  color: #F27329;
   font-size: 24px;
   opacity: 0.8;
   transition: 0.3s;
@@ -467,7 +464,7 @@
 }
 .gwf-bio__card {
   text-align: center;
-  color: #ffffff;
+  color: #3C3C3C;
 }
 .gwf-bio__links {
   display: flex;
@@ -485,13 +482,13 @@
   font-weight: 400;
   color: #ffffff;
   width: 60%;
-  background: #196090;
+  background: #F27329;
   margin-bottom: 10px;
   border-radius: 5px;
   height: 25px;
 }
 .gwf-bio__links--item:hover {
-  background: #3498db;
+  background-color: rgb(240.5396475771, 99.2731277533, 16.9603524229);
 }
 @media (max-width: 767px) {
   .gwf-bio__links--item {
@@ -544,7 +541,7 @@
   margin: 10px;
 }
 .gwf-bio__produtos {
-  background-color: #196090;
+  background-color: #F2BB16;
   border-radius: 15px;
   padding: 10px;
   margin: 0 auto;
@@ -624,7 +621,7 @@
 }
 .gwf-bio__carrossel--controls {
   position: absolute;
-  top: 73%;
+  top: 27%;
   width: 99%;
   display: flex;
   justify-content: space-between;
@@ -646,7 +643,7 @@
   box-shadow: none;
   text-shadow: none;
   background-color: #ffffff;
-  color: #196090;
+  color: #CA9A0B;
   width: 35px;
   height: 35px;
   border-radius: 50%;
@@ -666,8 +663,8 @@
 }
 .gwf-bio__loja--button {
   color: #ffffff;
-  background-color: #e67e22;
-  border: 2px solid #e67e22;
+  background-color: #F27329;
+  border: 2px solid #F27329;
   border-radius: 8px;
   width: 100%;
   padding: 15px 20px;
@@ -676,8 +673,8 @@
   font-family: "Poppins";
 }
 .gwf-bio__loja--button:hover {
-  background: #ec8123;
-  border: 2px solid #ec8123;
+  background-color: rgb(240.5396475771, 99.2731277533, 16.9603524229);
+  border: 2px solid #F27329;
 }
 @media (max-width: 767px) {
   .gwf-bio__loja--button {
@@ -705,7 +702,7 @@
   gap: 10px;
 }
 .gwf-bio__site--title {
-  color: #ffffff;
+  color: #3C3C3C;
   font-size: 24px;
 }
 @media (max-width: 767px) {
@@ -721,14 +718,14 @@
   outline: none;
   box-shadow: none;
   text-shadow: none;
-  background-color: #f1c40f;
+  background-color: #823316;
   padding: 15px;
   width: 40%;
   border-radius: 5px;
 }
 .gwf-bio__site--botao:hover {
   opacity: 1;
-  background-color: rgb(217.7952755906, 176.9586614173, 12.7047244094);
+  background-color: rgb(108.1907894737, 42.4440789474, 18.3092105263);
 }
 @media (max-width: 767px) {
   .gwf-bio__site--botao {

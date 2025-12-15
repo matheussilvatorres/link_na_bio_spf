@@ -1,0 +1,34 @@
+@use '../config';
+// @use 'propvw';
+
+.fake-loader {
+  position: relative;
+  overflow: hidden;
+}
+
+.fake-loader--loading {
+  pointer-events: none;
+  border-color: transparent !important;
+  background-color: transparent !important;
+
+  >* {
+    visibility: hidden;
+  }
+
+  &:before {
+    width: 0 !important;
+    height: 0 !important;
+  }
+
+  &:after {
+    @include config.wave;
+    display: block;
+    width: 100%;
+    height: 100%;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+  }
+}

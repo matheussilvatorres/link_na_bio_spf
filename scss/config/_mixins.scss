@@ -1,0 +1,95 @@
+@use 'sass:color';
+
+// placeholder color 
+@mixin placeholder($color, $opacity: 1) {
+  &::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: $color !important;
+    opacity: $opacity !important;
+  }
+
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: $color !important;
+    opacity: $opacity !important;
+  }
+
+  &:-ms-input-placeholder {
+    /* IE 10+ */
+    color: $color !important;
+    opacity: $opacity !important;
+  }
+
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: $color !important;
+    opacity: $opacity !important;
+  }
+}
+
+//scrollbar collor
+@mixin scrollbar($primary, $secondary: color.adjust($primary, $lightness: 25%), $width: 6px, $radius: 4px) {
+
+  &::-webkit-scrollbar {
+    width: $width;
+    /* width of the entire scrollbar */
+  }
+
+  &::-webkit-scrollbar-thumb {
+    // background: $primary;
+    border-radius: $radius;
+    background-color: $primary;
+    /* color of the scroll thumb */
+    // border-radius: 20px;
+    /* roundness of the scroll thumb */
+    // border: 3px solid $secondary
+  }
+
+  &::-webkit-scrollbar-track {
+    border-radius: $radius;
+    background: $secondary;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  // // For Internet Explorer
+  // body & {
+  //   scrollbar-face-color: $primary;
+  //   scrollbar-track-color: $secondary;
+  // }
+
+  //For Firefox
+  scrollbar-color: $primary $secondary;
+  scrollbar-width: thin;
+}
+
+//scrollbar collor
+@mixin tree-dots($lines: 1, $width: auto, $height: auto) {
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+
+  @if $width {
+    width: $width
+  }
+
+  @if $height {
+    height: $height
+  }
+
+  @if $lines >1 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $lines;
+  }
+
+  @else {
+    white-space: nowrap;
+  }
+}
+
+@mixin fill-available($property) {
+  #{$property}: -webkit-fill-available;
+  #{$property}: -moz-available; // Or -moz-fill-available in some contexts
+  #{$property}: fill-available;
+}

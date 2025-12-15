@@ -1,0 +1,108 @@
+@use 'sass:color';
+
+/* --- FAMÍLIA CORES --- */
+$main-font-thin: 'Poppins';
+$main-font-light: 'Poppins';
+$main-font-medium: 'Poppins';
+$main-font-bold: 'Poppins';
+$main-font-black: 'Poppins';
+
+// $general-font-thin: 'Konnect';
+$general-font-light: 'Poppins';
+$general-font-medium: 'Poppins';
+$general-font-bold: 'Poppins';
+// $general-font-black: 'Konnect';
+
+/* --- CORES --- */
+$primary-color-lightest: null;
+$primary-color-lighter: null;
+$primary-color-light: #f0b37e;
+$primary-color: #e67e22;
+$primary-color-dark: #924d10;
+$primary-color-darker: null;
+$primary-color-darkest: null;
+// $primary-color-special: null;
+
+$secondary-color-lightest: null;
+$secondary-color-lighter: null;
+$secondary-color-light: #8bc4ea ;     
+$secondary-color: #3498db;
+$secondary-color-dark:  #196090;
+$secondary-color-darker: null;
+$secondary-color-darkest: null;
+// $secondary-color-special: null;
+
+$tertiary-color-lightest: null;
+$tertiary-color-lighter: null;
+$tertiary-color-light: #f7dc6f;
+$tertiary-color: #f1c40f;
+$tertiary-color-dark: #927608;
+$tertiary-color-darker: null;
+$tertiary-color-darkest: null;
+// $tertiary-color-special: null;
+
+$custom_1-color-lightest: null;
+$custom_1-color-lighter: null;
+$custom_1-color-light: #f4b781;
+$custom_1-color: #ec8123;
+$custom_1-color-dark: #9c500d;
+$custom_1-color-darker: null;
+$custom_1-color-darkest: null;
+// $custom_1-color-special: null;
+
+$custom_2-color-lightest: null;
+$custom_2-color-lighter: null;
+$custom_2-color-light: null;
+$custom_2-color: null;
+$custom_2-color-dark: null;
+$custom_2-color-darker: null;
+$custom_2-color-darkest: null;
+// $custom_2-color-special: null;
+
+// $alternative-color: null;
+
+$neutral-color-lightest: #ffffff;
+$neutral-color-lighter: #F5F5F5;
+$neutral-color-light: #DEDEDE;
+$neutral-color: #A6A6A6;
+$neutral-color-dark: #707070;
+$neutral-color-darker: #3C3C3C;
+$neutral-color-darkest: #000000;
+
+
+$neutral-color-transparent-16: rgba(0, 0, 0, .16);
+$neutral-color-transparent-25: rgba(0, 0, 0, .25);
+$primary-color-transparent-70: rgba($primary-color, .70);
+// $neutral-color-transparent-dark: rgba($neutral-color-darker, .75);
+;
+$default-shadow: 0px 3px 6px $neutral-color-transparent-16;
+$default-shadow-primary: 0px 3px 6px $primary-color-transparent-70;
+$right-side-shadow: 4px 0px 6px $neutral-color-transparent-16;
+$left-side-shadow: -4px 0px 6px $neutral-color-transparent-16;
+$top-side-shadow: 0px -4px 6px $neutral-color-transparent-25;
+
+/* --- TAMANHO DE FONTE --- */
+$fs-base-biggest: 32px;
+$fs-base-bigger: 26px;
+$fs-base-big: 24px;
+$fs-base-medium: 20px;
+$fs-base: 16px;
+$fs-base-small: 14px;
+$fs-base-smaller: 12px;
+$fs-base-smallest: 10px;
+
+/* --- Icones --- */
+
+$cancel-icon: '<svg id="b9ebc488-6126-4036-bb1c-72614b368e3c" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" style="fill:#ed0b52"/><polygon points="17.21 8.71 15.79 7.29 12.25 10.84 8.71 7.29 7.29 8.71 10.84 12.25 7.29 15.79 8.71 17.21 12.25 13.66 15.79 17.21 17.21 15.79 13.66 12.25 17.21 8.71" style="fill:#fff"/></svg>';
+$check-icon: '<svg id="b7795966-1840-4c96-a9eb-35a8d6c93e0b" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" style="fill:#58b735"/><polygon points="9.41 16.41 5.25 11.66 6.75 10.34 9.59 13.59 17.34 6.75 18.66 8.25 9.41 16.41" style="fill:#fff"/></svg>';
+$cesta-sucesso: '<svg id="a4e6f97b-3bc0-4ecb-bf47-f632d7fd5b1d" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 35"><circle cx="43" cy="12" r="12" style="fill:#58b735"/><polygon points="40.41 16.41 36.25 11.66 37.75 10.34 40.59 13.59 48.34 6.75 49.66 8.25 40.41 16.41" style="fill:#fff"/><path d="M33.36,13.46h-7l2-4A1.66,1.66,0,0,0,26.92,7H7.54A1.66,1.66,0,0,0,6.06,9.42l2.05,4h-7a1.1,1.1,0,0,0-1.1,1,1.08,1.08,0,0,0,1.08,1.11H2.15L4.31,30.69C4.62,33.25,6.24,35,8.62,35H25.84c2.38,0,4-1.75,4.31-4.31l2.16-15.07h1.07a1.08,1.08,0,0,0,1.08-1.11A1.1,1.1,0,0,0,33.36,13.46ZM26,8.85,23.6,13.46H10.86L8.49,8.85Zm3.57,11.08L28.3,28.54l-.17,1.89a3.77,3.77,0,0,1-.17.81,2.12,2.12,0,0,1-2.12,1.61H8.63A2.13,2.13,0,0,1,6.5,31.24a3.77,3.77,0,0,1-.17-.81l-.17-1.89L4.93,19.93l-.62-4.31H30.16ZM17.23,31.16A1.14,1.14,0,0,1,16.1,30V18.32a1.13,1.13,0,0,1,2.26,0V30A1.14,1.14,0,0,1,17.23,31.16ZM12,31a1.12,1.12,0,0,1-1.1-.89L8.49,18.68a1.12,1.12,0,1,1,2.2-.46l2.44,11.45A1.13,1.13,0,0,1,12.26,31,.9.9,0,0,1,12,31Zm10.4,0a.86.86,0,0,1-.23,0,1.13,1.13,0,0,1-.87-1.34l2.43-11.45a1.12,1.12,0,1,1,2.2.46L23.53,30.14A1.12,1.12,0,0,1,22.43,31Z" transform="translate(0)" style="fill:#004155"/></svg>';
+
+$cesta-erro: '<svg id="bd71cc68-468a-4020-a24e-76c94038443a" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 55 35"><circle cx="43" cy="12" r="12" style="fill:#ed0b52"/><polygon points="48.21 8.71 46.79 7.29 43.25 10.84 39.71 7.29 38.29 8.71 41.84 12.25 38.29 15.79 39.71 17.21 43.25 13.66 46.79 17.21 48.21 15.79 44.66 12.25 48.21 8.71" style="fill:#fff"/><path d="M33.36,13.46h-7l2-4A1.66,1.66,0,0,0,26.92,7H7.54A1.66,1.66,0,0,0,6.06,9.42l2.05,4h-7a1.1,1.1,0,0,0-1.1,1,1.08,1.08,0,0,0,1.08,1.11H2.15L4.31,30.69C4.62,33.25,6.24,35,8.62,35H25.84c2.38,0,4-1.75,4.31-4.31l2.16-15.07h1.07a1.08,1.08,0,0,0,1.08-1.11A1.1,1.1,0,0,0,33.36,13.46ZM26,8.85,23.6,13.46H10.86L8.49,8.85Zm3.57,11.08L28.3,28.54l-.17,1.89a3.77,3.77,0,0,1-.17.81,2.12,2.12,0,0,1-2.12,1.61H8.63A2.13,2.13,0,0,1,6.5,31.24a3.77,3.77,0,0,1-.17-.81l-.17-1.89L4.93,19.93l-.62-4.31H30.16ZM17.23,31.16A1.14,1.14,0,0,1,16.1,30V18.32a1.13,1.13,0,0,1,2.26,0V30A1.14,1.14,0,0,1,17.23,31.16ZM12,31a1.12,1.12,0,0,1-1.1-.89L8.49,18.68a1.12,1.12,0,1,1,2.2-.46l2.44,11.45A1.13,1.13,0,0,1,12.26,31,.9.9,0,0,1,12,31Zm10.4,0a.86.86,0,0,1-.23,0,1.13,1.13,0,0,1-.87-1.34l2.43-11.45a1.12,1.12,0,1,1,2.2.46L23.53,30.14A1.12,1.12,0,0,1,22.43,31Z" transform="translate(0)" style="fill:#004155"/></svg>';
+
+$email-erro: '<svg id="a8f37aea-eece-4c5d-a373-7515f425bba7" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 47.99 32.96"><polygon points="26.24 13.96 3.76 13.96 15 21.75 26.24 13.96" style="fill:none"/><polygon points="15 24.18 2 15.18 2 30.96 28 30.96 28 15.18 15 24.18" style="fill:none"/><path d="M0,0V21H30V0ZM26.24,2,15,9.78,3.76,2ZM2,19V3.22l13,9,13-9V19Z" transform="translate(0 11.96)" style="fill:#004155"/><circle cx="35.99" cy="12" r="12" style="fill:#ed0b52"/><polygon points="41.2 8.71 39.78 7.29 36.24 10.84 32.7 7.29 31.28 8.71 34.83 12.25 31.28 15.79 32.7 17.21 36.24 13.66 39.78 17.21 41.2 15.79 37.65 12.25 41.2 8.71" style="fill:#fff"/></svg>';
+
+$email-sucesso: '<svg id="b8e7840f-bb0b-4478-9aa1-37b0847455ba" data-name="Camada 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 33"><polygon points="26.24 14 3.76 14 15 21.78 26.24 14" style="fill:none"/><polygon points="15 24.22 2 15.22 2 31 28 31 28 15.22 15 24.22" style="fill:none"/><path d="M0,12V33H30V12Zm26.24,2L15,21.78,3.76,14ZM2,31V15.22l13,9,13-9V31Z" style="fill:#004155"/><circle cx="36" cy="12" r="12" style="fill:#58b735"/><polygon points="33.41 16.41 29.25 11.66 30.75 10.34 33.59 13.59 41.34 6.75 42.66 8.25 33.41 16.41" style="fill:#fff"/></svg>';
+
+$empty-circle: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAYCAYAAAAPtVbGAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAHsSURBVHgBvZbPcYJAFMYXbMB0QAfSgcQGtANJBbEBBdSZHIMVBE+Z3GIFkFuO2gHX3MwtJ83vMYtDHEEdMN/MzluW3fft+8N7GOoMfN93TNPsG4bh7Pd7i6W2rPO8RqSsrXa73Tv7tmU6jCrlrVbLkzlKPlCWMF3nypA2wmZPn3c2pNF4PA4uJplOp8+IAcofUJao89ZakPiMLmfueU5LSXjZZmPMdMPtRlUuKLncCOFponW+3ipu6vV6T4hvz/PcJEl+1JWI4/iz2+1+EcNX5Bs6skuaBStcxEAIVA2gJ0IEeOQlXzP1Cwv2zEzVACaTSSgS97kHEuAwkuOA1QExDRjDAwlpOMSKpWoQkpW4zJZUNyWjJM8vSdVrgd4lYXDEElt/vY0DEtHbMdU/4KYkxHqLNXdCsiXobXUD6IKaCklKTCx1G3TQnUp2iUlSXR3VPBy8lGQxgW1Fqj2qBpFfWgplRgJbJKy6RzQCLi21K+svee2SavmnqNXBbDbLmh01LDqQ6AUpahuKWi2i+Xw+JMZusdiebFqSEborXtW0hIBz4XHTOtl+gyAIIerLNDe5CrpVSMu2z7bfo4Ou9Bj9uOCw3Kz4I2Eh5GdD3GMzFozwlPWlJAUyB6sGEHZEmdK/RCBlJIyNZGeVa38BVM8OhVm4UNcAAAAASUVORK5CYII=');
+
+$full-circle: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAYCAYAAAAPtVbGAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAF/SURBVHgBvZYxUsJAFIb/t4g13iC1FuoNVis7cRTHTjmB3oCxtJIbgK1aYGclOUJs1HLtLCl1QJ5vs2EAIQRIwjeTySab5N9N/rx/CUnoEw2FQzBpOfJkK0U9AYgM+vwEdFvwW524R9DMhxPVbAvJGLm2iZf76/lF9k9vwXyFxTHg7p7MysSL6HIJVGxLawfL0wFDhB6CwQk11q3WaykFLDJQtGXA3qSIrlws+YpihIqNwUHBCZx5IG5g6Jws8OBtfcK8BdFMfjWcPbOFcO52Fl1pS0sjDxi7yjkqJwGnouV1raV1UwK0rbACViGyISLUQZ6ovhGRrkGe9ElEbIlm+MgN8qNvYjMhF4wtlJFIrwlbPbOGEeaLq13m4xve5o8EzwGyw86iahtDC/uPdZG+Qza48IoY/0+4Z0t9gHRYIx2NpuP0+NXHdZC6xOJMjd/C9Evfn8MsoDAl58kYGT3fiIGqIvD1v5MSb7erFnDZFjoxxqiocf8Xv4bunLEk+gMLFXmBQkk8RwAAAABJRU5ErkJggg==');

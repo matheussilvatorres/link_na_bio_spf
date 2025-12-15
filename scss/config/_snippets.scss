@@ -1,0 +1,564 @@
+// @use 'propvw-config';
+@use 'variables'as var;
+@use 'mixins'as mixin;
+// @use 'propvw';
+
+// -------------------------------------
+// reset default button styles
+// -------------------------------------
+@mixin reset-button {
+  background: transparent;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+// -------------------------------------
+// reset default list styles
+// -------------------------------------
+@mixin reset-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+// -------------------------------------
+// reset default link styles
+// -------------------------------------
+@mixin reset-link {
+  // text-transform: capitalize;
+  display: inline-block;
+  cursor: pointer;
+  line-height: 1;
+  text-decoration: none;
+  text-shadow: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+// -------------------------------------
+// reset default input styles
+// -------------------------------------
+@mixin reset-input {
+  border: none;
+  cursor: pointer;
+  box-shadow: none;
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+// -------------------------------------
+// reset default input styles
+// -------------------------------------
+@mixin hide-text {
+  position: relative;
+  font-size: 0px;
+  line-height: 0px;
+  color: transparent;
+  overflow: hidden;
+}
+
+// -------------------------------------
+// container component
+// -------------------------------------
+@mixin container-main {
+  width: 100%;
+  margin: 0 auto;
+  @include propvw.style('padding', 0 11);
+
+  @include propvw.media(tablet) {
+    @include propvw.style(max-width, 664);
+  }
+
+  @include propvw.media(small_desktop, desktop) {
+    @include propvw.style(padding, 0 10);
+  }
+}
+
+// -------------------------------------
+// container component
+// -------------------------------------
+@mixin container-account {
+  width: 100%;
+  margin: 0 auto;
+  @include propvw.style('max-width', 1242);
+
+  @include propvw.media(tablet) {
+    @include propvw.style(padding, 0 36);
+  }
+
+  @include propvw.media(mobile) {
+    @include propvw.style(padding, 0 10);
+  }
+}
+
+// -------------------------------------
+// container component
+// -------------------------------------
+@mixin container-checkout {
+  width: 100%;
+  margin: 0 auto;
+  @include propvw.style('max-width', 1262);
+
+  @include propvw.media(tablet) {
+    @include propvw.style(max-width, 664);
+  }
+
+  @include propvw.media(mobile) {
+    @include propvw.style(padding, 0 10);
+  }
+}
+
+// -------------------------------------
+// container component
+// -------------------------------------
+@mixin container-full {}
+
+// -------------------------------------
+// container component
+// -------------------------------------
+@mixin container-compact {
+  width: 100%;
+  margin: 0 auto;
+  @include propvw.style('max-width', 948);
+
+  @include propvw.media(tablet) {
+    @include propvw.style(max-width, 664);
+  }
+
+  @include propvw.media(mobile) {
+    @include propvw.style(padding, 0 10);
+  }
+}
+
+// -------------------------------------
+// container component
+// -------------------------------------
+@mixin container-header {
+  width: 100%;
+  margin: 0 auto;
+  @include propvw.style('max-width', 1242);
+
+  @include propvw.media(tablet) {
+    @include propvw.style(padding, 0 52 0 20);
+  }
+
+  @include propvw.media(mobile) {
+    @include propvw.style(padding, 0 10);
+  }
+}
+
+@mixin filled-btn($bg: var.$neutral-color, $color: var.$neutral-color-darker, $disabled: false) {
+
+  //ESSE É UM MIXIN **SIMPLES E DIRETO**
+  //SUA FUNÇÃO É CRIAR UM BOTÃO RESETADO
+  //COM BG CUSTOMIZADO
+  //E FUNÇÃO DE HOVER POR PADRÃO
+  //---------
+  //- novos bgs no hover, padding, height, width efeitos de texto
+  //e etc devem ser tratados fora dele
+  //- filhos podem receber cor inherit pra acompanhar as
+  //deifnições do pai
+
+  display: block;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-shadow: none;
+  cursor: pointer;
+  transition: all .2s ease;
+  background-image: none;
+  background-color: $bg;
+  color: $color;
+  font-weight: 700;
+  @include propvw.style(border-radius, 4);
+
+  @if $disabled {
+    pointer-events: none;
+    transform: grayscale(100%);
+    opacity: 0.6;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    background-color: darken($bg, 10%);
+
+    @if lightness($bg) < 50% {
+      color: var.$neutral-color-lightest;
+    }
+
+    @else {
+      color: var.$neutral-color-darkest;
+    }
+  }
+}
+
+@mixin outlined-btn($border-color: var.$neutral-color, $color: var.$neutral-color-darker, $disabled: false) {
+
+  //ESSE É UM MIXIN **SIMPLES E DIRETO**
+  //SUA FUNÇÃO É CRIAR UM BOTÃO RESETADO
+  //COM BORDA CUSTOMIZADA
+  //E FUNÇÃO DE HOVER POR PADRÃO
+  //---------
+  //- novos bgs no hover, padding, height, width efeitos de texto
+  //e etc devem ser tratados fora dele
+  //- filhos podem receber cor inherit pra acompanhar as
+  //deifnições do pai
+
+  text-decoration: none;
+  display: block;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-shadow: none;
+  cursor: pointer;
+  transition: all .2s ease;
+  background-image: none;
+  background-color: transparent;
+  color: $border-color;
+  border: 1px solid $border-color;
+  font-weight: 700;
+  @include propvw.style(border-radius, 4);
+
+  @if $disabled {
+    pointer-events: none;
+    transform: grayscale(100%);
+    opacity: 0.6;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    background-color: $border-color;
+
+    @if lightness($border-color) < 50% {
+      color: var.$neutral-color-lightest;
+    }
+
+    @else {
+      color: var.$neutral-color-darkest;
+    }
+  }
+
+}
+
+@mixin custom-outlined-btn($border-color: var.$neutral-color-light, $color: var.$primary-color-darkest, $disabled: false) {
+
+  //ESSE É UM MIXIN **SIMPLES E DIRETO**
+  //SUA FUNÇÃO É CRIAR UM BOTÃO RESETADO
+  //COM BORDA CUSTOMIZADA
+  //E FUNÇÃO DE HOVER POR PADRÃO
+  //---------
+  //- novos bgs no hover, padding, height, width efeitos de texto
+  //e etc devem ser tratados fora dele
+  //- filhos podem receber cor inherit pra acompanhar as
+  //deifnições do pai
+
+  text-decoration: none;
+  display: block;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-shadow: none;
+  cursor: pointer;
+  transition: all .2s ease;
+  background-image: none;
+  background-color: transparent;
+  color: $color;
+  border: 1px solid $border-color;
+  font-weight: 700;
+  @include propvw.style(border-radius, 4);
+
+  @if $disabled {
+    pointer-events: none;
+    transform: grayscale(100%);
+    opacity: 0.6;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    $border-color: $color;
+    text-decoration: none;
+    background-color: var.$primary-color-darkest;
+    border-color: var.$primary-color-darkest;
+
+    @if lightness($border-color) < 50% {
+      color: var.$neutral-color-lightest;
+    }
+
+    @else {
+      color: var.$neutral-color-darkest;
+    }
+  }
+
+}
+
+@mixin custom-filled-btn ($bg: var.$neutral-color, $color: var.$neutral-color-darker, $disabled: false) {
+  display: block;
+  text-decoration: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  text-shadow: none;
+  cursor: pointer;
+  transition: all .2s ease;
+  background-image: none;
+  background-color: $bg;
+  color: $color;
+  font-weight: 700;
+  @include propvw.style(border-radius, 4);
+
+  @if $disabled {
+    pointer-events: none;
+    transform: grayscale(100%);
+    opacity: 0.6;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    text-decoration: none;
+    background-color: var.$primary-color-darkest;
+
+    @if lightness($bg) < 50% {
+      color: var.$neutral-color-lightest;
+    }
+
+    @else {
+      color: var.$neutral-color-darkest;
+    }
+  }
+}
+
+@mixin default-input {
+  @include reset-input;
+  background: var.$neutral-color-lightest !important;
+  font-weight: 400;
+  border: 1px solid var.$neutral-color;
+  color: var.$neutral-color-darker;
+  transition: all .2s ease;
+  box-shadow: none !important;
+  outline: none !important;
+  @include propvw.style(border-radius, 4);
+  @include propvw.style(font-size, 16);
+  @include propvw.style(line-height, 42);
+  @include propvw.style(padding, 0 20);
+  @include mixin.placeholder(var.$neutral-color-dark, 1);
+
+  &:focus {
+    border-color: var.$neutral-color-darker;
+  }
+}
+
+@mixin simple-input {
+  @include reset-input;
+  background: var.$neutral-color-lightest !important;
+  font-weight: 400;
+  color: var.$neutral-color-darkest;
+  transition: all .2s ease;
+  box-shadow: none !important;
+  outline: none !important;
+  @include mixin.placeholder(var.$neutral-color-dark, 1);
+
+  &:focus {
+    border-color: var.$neutral-color-darkest;
+  }
+}
+
+@mixin default-checkbox {
+  position: relative;
+  visibility: hidden;
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 1px solid var.$neutral-color;
+    border-radius: 4px;
+    background: var.$neutral-color-lightest;
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: visible;
+    transition: all .2s ease;
+  }
+
+  &:checked:before {
+    background-color: var.$primary-color-darkest;
+  }
+}
+
+@mixin secondary-checkbox {
+  position: relative;
+  visibility: hidden;
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    border: 1px solid var.$neutral-color-lightest;
+    border-radius: 4px;
+    background: var.$primary-color-darkest;
+    position: absolute;
+    left: 0;
+    top: 0;
+    visibility: visible;
+    transition: all .2s ease;
+  }
+
+  &:checked:before {
+    background-color: var.$secondary-color;
+  }
+}
+
+@mixin slick-dots($bg-color: var.$neutral-color, $active-color: var.$primary-color-darkest) {
+  .slick-dots {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: max-content;
+    align-items: center;
+    justify-content: center;
+    @include propvw.style(grid-gap, 10);
+    @include propvw.style(padding-top, 13);
+
+    @include propvw.media(mobile) {
+      @include propvw.style(grid-gap, 4);
+      @include propvw.style(padding-top, 8);
+    }
+
+    li {
+      display: contents;
+    }
+
+    button {
+      @include reset-button;
+      @include hide-text;
+      display: block;
+      background-color: $bg-color;
+      border-radius: 50%;
+      transition: all .2s ease;
+      @include propvw.style(height, 12);
+      @include propvw.style(width, 12);
+
+      @include propvw.media(mobile) {
+        @include propvw.style(height, 6);
+        @include propvw.style(width, 6);
+      }
+    }
+
+    .slick-active {
+      button {
+        background-color: $active-color;
+      }
+    }
+  }
+}
+
+@mixin slick-arrows($position: inside, $elem: &) {
+  &__arrow {
+    @include reset-button;
+    z-index: 30;
+    position: absolute;
+    @include propvw.style(top, 167);
+
+    @include propvw.media(tablet) {
+      @include propvw.style(top, 88);
+    }
+
+    i {
+      color: var.$neutral-color-darker;
+      @include propvw.style(font-size, 25);
+      @include propvw.style(line-height, 25);
+    }
+  }
+
+  &__arrow--prev {
+    @if $position==inside {
+      left: 0;
+
+      @include propvw.media(tablet) {
+        @include propvw.style(left, -15);
+      }
+    }
+
+    @else {
+      @include propvw.style(left, -35);
+
+      @include propvw.media(mobile) {
+        @include propvw.style(left, -5);
+        @include propvw.style(top, 62);
+      }
+    }
+  }
+
+  &__arrow--next {
+    @if $position==inside {
+      right: 0;
+
+      @include propvw.media(tablet) {
+        @include propvw.style(right, -15);
+      }
+    }
+
+    @else {
+      @include propvw.style(right, -35);
+
+      @include propvw.media(mobile) {
+        @include propvw.style(right, -5);
+        @include propvw.style(top, 62);
+      }
+    }
+  }
+}
+
+@mixin slick-gap($gap-desk: 8, $gap-mobile: 5) {
+
+  /* the slides */
+  .slick-slide {
+    @include propvw.style(margin, 0 $gap-desk);
+
+    @include propvw.media(mobile) {
+      @include propvw.style(margin, 0 $gap-mobile);
+    }
+
+    // margin: 0 8px;
+  }
+
+  /* the parent */
+  .slick-list {
+    $-new-gap: 0 - $gap-desk;
+    @include propvw.style(margin, 0 $-new-gap);
+
+    @include propvw.media(mobile) {
+      $-new-gap: 0 - $gap-mobile;
+      @include propvw.style(margin, 0 $-new-gap);
+    }
+  }
+}
+
+
+// -------------------------------------
+// apply font reset and styles
+// -------------------------------------
+@mixin apply-font($font-fml, $font-sz, $font-stl: normal, $font-wgt: auto) {
+  font-family: $font-fml;
+  font-style: $font-stl;
+  font-weight: $font-wgt;
+  font-size: $font-sz;
+}
+
+@-moz-document url-prefix() { 
+  .form-checkbox__input {
+    visibility: visible !important;
+  }
+}

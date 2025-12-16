@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const btnPrev = document.getElementById('js-btn-prev');
     const btnNext = document.getElementById('js-btn-next');
 
-    const slides = document.querySelectorAll('.gwf-bio__carrossel--slide');
+    const slides = document.querySelectorAll('.gwf-bio__carrossel-slide');
 
     let currentIndex = 0;
     const totalSlides = slides.length;

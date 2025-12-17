@@ -389,7 +389,7 @@
   display: flex;
   justify-content: center;
   padding: 20px;
-  background-image: url(https://agenciagrowify.com.br/wp-content/uploads/2025/12/background-spf-1.png);
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(https://agenciagrowify.com.br/wp-content/uploads/2025/12/background-surpresa-fantastica.png);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
@@ -412,7 +412,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: #3C3C3C;
+  color: #ffffff;
 }
 .gwf-bio__profile-image {
   width: 150px;
@@ -456,7 +456,7 @@
   text-decoration: none;
 }
 .gwf-bio__social-icon {
-  color: #F27329;
+  color: #17BEBB;
   font-size: 24px;
   opacity: 0.8;
   transition: 0.3s;
@@ -467,7 +467,7 @@
 }
 .gwf-bio__card {
   text-align: center;
-  color: #3C3C3C;
+  color: #ffffff;
 }
 .gwf-bio__links {
   display: flex;
@@ -544,7 +544,7 @@
   margin: 10px;
 }
 .gwf-bio__produtos {
-  background-color: #F2BB16;
+  background-color: #F27329;
   border-radius: 15px;
   padding: 10px;
   margin: 0 auto;
@@ -685,8 +685,8 @@
 }
 .gwf-bio__loja-button {
   color: #ffffff;
-  background-color: #F27329;
-  border: 2px solid #F27329;
+  background-color: #AB450A;
+  border: 2px solid #AB450A;
   border-radius: 8px;
   width: 100%;
   padding: 15px 20px;
@@ -715,7 +715,7 @@
   }
 }
 .gwf-bio__site-title {
-  color: #3C3C3C;
+  color: #ffffff;
   font-size: 24px;
 }
 @media (max-width: 767px) {

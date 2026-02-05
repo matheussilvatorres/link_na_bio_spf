@@ -388,6 +388,252 @@
 		font-size: 18px;
 	}
 
+	&__store {
+		margin: 0 auto 30px auto;
+		background-color: config.$neutral-color-lightest;
+		border-radius: 15px;
+		overflow: hidden;
+		box-shadow: config.$default-shadow;
+		max-width: 600px;
+
+		@include config.breakpoint('medium-down') {
+			width: 98%;
+		}
+	}
+
+	&__store-card {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__store-image-wrapper {
+		position: relative;
+		height: 180px;
+	}
+
+	&__store-image {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+
+	&__store-info {
+		padding: 10px;
+		color: #333;
+	}
+
+	&__store-icon {
+		padding-right: 10px;
+		color: #666;
+		width: 16px;
+
+
+		@include config.breakpoint('large-up') {
+			font-size: 20px;
+		}
+	}
+
+	&__store-name {
+		font-size: 20px;
+		font-weight: 700;
+		margin-bottom: 12px;
+	}
+
+	&__store-address,
+	&__store-phone,
+	&__store-hours,
+	&__store-truck {
+		font-size: 14px;
+		margin-bottom: 8px;
+		text-align: left;
+	}
+
+	&__store-actions {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 10px;
+		margin-top: 15px;
+
+		@include config.breakpoint('medium-down') {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	&__store-btn {
+		@include config.reset-link;
+		padding: 10px;
+		border-radius: 8px;
+		font-size: 14px;
+		font-weight: 600;
+		text-align: center;
+		border: 1px solid #ddd;
+		transition: all 0.3s ease;
+	}
+
+	&__store-btn--maps {
+		background-color: #4285F4;
+		color: #fff;
+		border-color: #4285F4;
+
+		&:hover {
+			background-color: #357ae8;
+			border-color: #357ae8;
+			color: #fff;
+			font-weight: 700;
+		}
+	}
+
+	&__store-btn--waze {
+		background-color: #33CCFF;
+		color: #000;
+		border-color: #33CCFF;
+
+		&:hover {
+			background-color: #29b6e6;
+			border-color: #29b6e6;
+		}
+	}
+
+	&__store-btn--map {
+		background-color: #fff;
+		color: #333;
+
+		&:hover {
+			background-color: #f5f5f5;
+		}
+	}
+
+	&__store-map {
+		padding: 0 15px 15px;
+
+		iframe {
+			border-radius: 10px;
+			border: 1px solid #eee !important;
+		}
+	}
+
+	&__reviews-title {
+		font-size: 24px;
+		color: config.$neutral-color-lightest;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	&__review {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		background-color: #f8f9fa;
+		padding: 20px 15px;
+		border-radius: 12px;
+		max-width: 450px;
+		margin: 0 auto;
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+		color: #3c4043;
+		background-color: rgba(255, 255, 255, 0.8);
+
+		@include config.breakpoint('medium-down') {
+			flex-direction: column;
+			gap: 20px;
+			text-align: center;
+			padding: 20px;
+			width: 98%;
+		}
+	}
+
+	&__review-content {
+		display: flex;
+		flex-direction: column;
+		gap: 4px;
+	}
+
+	&__review-branding {
+		display: flex;
+		align-items: center;
+		gap: 8px;
+
+		@include config.breakpoint('medium-down') {
+			justify-content: center;
+		}
+	}
+
+	&__review-logo {
+		width: 75px;
+		height: auto;
+	}
+
+	&__review-title {
+		font-size: 18px;
+		font-weight: 700;
+		color: #5f6368;
+	}
+
+	&__review-rating {
+		display: flex;
+		align-items: center;
+		gap: 6px;
+
+		@include config.breakpoint('medium-down') {
+			justify-content: center;
+		}
+	}
+
+	&__review-score {
+		font-size: 20px;
+		font-weight: 800;
+		color: #3c4043;
+	}
+
+	&__review-stars {
+		display: flex;
+		color: #fbbc04;
+		font-size: 18px;
+	}
+
+	&__review-count {
+		font-size: 14px;
+		color: #70757a;
+	}
+
+	&__review-button {
+		background-color: #1a73e8;
+		color: #ffffff;
+		text-decoration: none;
+		padding: 10px 20px;
+		border-radius: 50px;
+		font-size: 14px;
+		font-weight: 600;
+		transition: background-color 0.3s ease, transform 0.2s ease;
+
+
+		&:hover {
+			background-color: #1557b0;
+			transform: scale(1.02);
+		}
+
+		@include config.breakpoint('medium-down') {
+			width: 100%;
+			max-width: 250px;
+		}
+	}
+
+	&__map {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	&__map-container {
+		height: 150px;
+		border-radius: 12px;
+		overflow: hidden;
+
+		@include config.breakpoint('medium-down') {
+			width: 100vw;
+		}
+	}
+
+
 	&__video {}
 
 	&__video-container {
@@ -423,4 +669,5 @@
 			width: 100vw;
 		}
 	}
+
 }

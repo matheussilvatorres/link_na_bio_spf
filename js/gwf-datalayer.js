@@ -264,7 +264,7 @@
 		resetDataLayerGWF: function () {
 			window.dataLayer = window.dataLayer || [];
 			window.dataLayer.push({
-				'event': 'gwf.ecommerce.reset_datalayer',
+				'event': 'gwf.linkbio.reset_datalayer',
 				'gwf_event': null,
 				'gwf_data': null
 			});
@@ -383,7 +383,7 @@
 			// Disparar evento (SEM objetos - GTM vai ler de cookies/storage)
 			window.dataLayer = window.dataLayer || [];
 			window.dataLayer.push({
-				'event': 'gwf.ecommerce.context_ready'
+				'event': 'gwf.linkbio.context_ready'
 			});
 
 			console.log('[GWF DataLayer] Context initialized (stored in cookies/sessionStorage):', {
@@ -409,7 +409,7 @@
 			window.gwfDataLayer.utils.resetDataLayerGWF();
 
 			dataLayer.push({
-				event: 'gwf.select_content',
+				event: 'gwf.linkbio.select_content',
 				gwf_event: "select_content",
 				gwf_data: {
 					content_type: paramContent,
@@ -421,7 +421,7 @@
 			window.gwfDataLayer.utils.resetDataLayerGWF();
 
 			dataLayer.push({
-				event: 'gwf.generate_lead',
+				event: 'gwf.linkbio.generate_lead',
 				gwf_event: "generate_lead",
 				gwf_data: {
 					currency: "BRL",

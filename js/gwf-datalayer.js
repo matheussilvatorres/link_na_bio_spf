@@ -439,41 +439,37 @@
 	// FUNÇÃO: GESTÃO DE AÇÕES NO DOM
 	// ==========================================
 	window.gwfDataLayer.handleActionsDOM = function () {
-		let socialButtons = document.querySelectorAll('.gwf-bio__social-link');
-		for (let index = 0; index < socialButtons.length; index++) {
-			const element = socialButtons[index];
+		// BOTÕES social
+		document.querySelectorAll('.gwf-bio__social-link').forEach(element => {
 			element.addEventListener('click', function (event) {
 				const linkId = event.currentTarget.id;
 				gwfDataLayer.events.push_SelectContent("social_link", linkId);
 			});
-		}
+		});
 
-		let actionButtons = document.querySelectorAll('.gwf-bio__links-item');
-		for (let index = 0; index < actionButtons.length; index++) {
-			const element = actionButtons[index];
+		// BOTÕES action
+		document.querySelectorAll('.gwf-bio__links-item').forEach(element => {
 			element.addEventListener('click', function (event) {
 				const linkId = event.currentTarget.id;
 				gwfDataLayer.events.push_SelectContent("action_button", linkId);
 			});
-		}
+		});
 
-		let sliderButtons = document.querySelectorAll('.gwf-bio__loja-link');
-		for (let index = 0; index < sliderButtons.length; index++) {
-			const element = sliderButtons[index];
+		// BOTÕES slider
+		document.querySelectorAll('.gwf-bio__loja-link').forEach(element => {
 			element.addEventListener('click', function (event) {
 				const linkId = event.currentTarget.id;
 				gwfDataLayer.events.push_SelectContent("slider_button", linkId);
 			});
-		}
+		});
 
-		let storesButtons = document.querySelectorAll('.gwf-bio__store-btn');
-		for (let index = 0; index < storesButtons.length; index++) {
-			const element = storesButtons[index];
+		// BOTÕES stores
+		document.querySelectorAll('.gwf-bio__store-btn').forEach(element => {
 			element.addEventListener('click', function (event) {
 				const linkId = event.currentTarget.id;
 				gwfDataLayer.events.push_SelectContent("store_button", linkId);
 			});
-		}
+		});
 
 	};
 

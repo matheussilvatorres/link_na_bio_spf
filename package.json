@@ -1,0 +1,24 @@
+{
+  "name": "link_na_bio_spf",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/matheussilvatorres/link_na_bio_spf#readme",
+  "bugs": {
+    "url": "https://github.com/matheussilvatorres/link_na_bio_spf/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/matheussilvatorres/link_na_bio_spf.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "sass --watch scss:css"
+  },
+  "devDependencies": {
+    "sass": "^1.97.3"
+  }
+}

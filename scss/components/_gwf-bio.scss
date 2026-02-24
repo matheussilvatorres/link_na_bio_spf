@@ -4,6 +4,7 @@
 * {
 	padding: 0px;
 	margin: 0px;
+	box-sizing: border-box;
 }
 
 .gwf-bio {
@@ -101,6 +102,7 @@
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		gap: 10px;
 	}
 
 	&__links-item {
@@ -113,46 +115,26 @@
 		font-size: 18px;
 		font-weight: 400;
 		color: config.$neutral-color-lightest;
-		width: 60%;
 		background: config.$primary-color;
-		margin-bottom: 10px;
 		border-radius: 5px;
-		height: 25px;
+		line-height: 22px;
+		width: 100%;
+		max-width: 60%;
 
 		&:hover {
 			background-color: darken(config.$primary-color, 5%);
 		}
 
 		@include config.breakpoint('medium-down') {
-			width: 90%;
-			font-size: 17px;
+			max-width: 90%;
+			font-size: 15px;
 			padding-left: 25px;
 		}
 
 	}
 
 	&__links-text {
-		display: flex;
-		flex-direction: column;
-		line-height: 10px;
-		text-align: center;
-		gap: 10px;
-
-		@include config.breakpoint('medium-down') {
-			font-size: 15px;
-		}
-	}
-
-	&__links-icon {
-		position: absolute;
-		left: 15px;
-		top: 50%;
-		transform: translateY(-50%);
-		font-size: 30px;
-
-		@include config.breakpoint('medium-down') {
-			left: 9px;
-		}
+		flex: 1;
 	}
 
 	&__links-item-produtos {
@@ -227,8 +209,8 @@
 	}
 
 	&__carrossel-image {
-		height: 290px;
-		object-fit: contain;
+		width: 100%;
+		height: auto;
 		border-radius: 12px;
 
 		@include config.breakpoint('medium-down') {
@@ -320,8 +302,8 @@
 		}
 	}
 
-
-	&__loja-button {
+	&__loja-link {
+		@include config.reset-link;
 		color: config.$neutral-color-lightest;
 		background-color: config.$primary-color-dark;
 		border: 2px solid config.$primary-color-dark;
@@ -331,11 +313,7 @@
 		font-size: 18px;
 		font-weight: 400;
 		font-family: "Poppins";
-	}
-
-	&__loja-link {
-		text-decoration: none;
-		color: config.$neutral-color-lightest;
+		text-align: center;
 	}
 
 	&__site {

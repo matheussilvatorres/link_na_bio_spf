@@ -344,26 +344,27 @@
 	}
 
 	&__site-botao {
-		@include config.reset-button;
+	}
+	
+	&__site-link {
+		@include config.reset-link;
+		display: flex;
+		justify-content: center;
 		background-color: config.$custom_2-color-dark;
 		padding: 15px;
 		width: 40%;
 		border-radius: 5px;
-
+		color: config.$neutral-color-lightest;
+		font-size: 18px;
+	
 		&:hover {
 			opacity: 1;
 			background-color: darken(config.$custom_2-color-dark, 5%);
 		}
-
+	
 		@include config.breakpoint('medium-down') {
 			width: 90%;
 		}
-	}
-
-	&__site-link {
-		@include config.reset-link;
-		color: config.$neutral-color-lightest;
-		font-size: 18px;
 	}
 
 	&__store {

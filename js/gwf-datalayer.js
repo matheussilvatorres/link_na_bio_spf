@@ -270,6 +270,21 @@
 			});
 
 			console.log('[GWF DataLayer] DataLayer GWF resetado');
+		},
+
+		getParents: function (el, parentSelector) {
+			if (parentSelector === undefined) {
+				parentSelector = document;
+			}
+			var parents = [];
+			var p = el.parentNode;
+			while (p !== parentSelector) {
+				var o = p;
+				parents.push(o);
+				p = o.parentNode;
+			}
+			parents.push(parentSelector);
+			return parents;
 		}
 
 	}; // Fim utils
@@ -442,32 +457,120 @@
 		// BOTÕES social
 		document.querySelectorAll('.gwf-bio__social-link').forEach(element => {
 			element.addEventListener('click', function (event) {
-				const linkId = event.currentTarget.id;
-				gwfDataLayer.events.push_SelectContent("social_link", linkId);
+				dataLayer.push({
+					event: 'gwf.linkbio.click_social',
+					gwf_event: 'click_social',
+					gwf_data: {
+						social_network: event.currentTarget.ariaLabel
+					}
+				});
 			});
 		});
 
 		// BOTÕES action
-		document.querySelectorAll('.gwf-bio__links-item').forEach(element => {
-			element.addEventListener('click', function (event) {
-				const linkId = event.currentTarget.id;
-				gwfDataLayer.events.push_SelectContent("action_button", linkId);
+		document.querySelector('#whatsapp_btn_spf').addEventListener('click', function (event) {
+			dataLayer.push({
+				event: 'gwf.linkbio.click_whatsapp',
+				gwf_event: 'click_whatsapp',
+				gwf_data: {
+					cta_location: 'header'
+				}
+			});
+		});
+
+		// BOTÕES action
+		document.querySelector('#ecommerce_btn_spf').addEventListener('click', function (event) {
+			dataLayer.push({
+				event: 'gwf.linkbio.click_ecommerce',
+				gwf_event: 'click_ecommerce',
+				gwf_data: {
+					cta_location: 'header'
+				}
+			});
+		});
+
+		// BOTÕES action
+		document.querySelector('#see_all_btn_spf').addEventListener('click', function (event) {
+			dataLayer.push({
+				event: 'gwf.linkbio.click_ecommerce',
+				gwf_event: 'click_ecommerce',
+				gwf_data: {
+					cta_location: 'shelf'
+				}
 			});
 		});
 
 		// BOTÕES slider
-		document.querySelectorAll('.gwf-bio__loja-link').forEach(element => {
+		document.querySelectorAll('.gwf-bio__links-item-produtos, .gwf-bio__loja-link').forEach(element => {
 			element.addEventListener('click', function (event) {
-				const linkId = event.currentTarget.id;
-				gwfDataLayer.events.push_SelectContent("slider_button", linkId);
+				const product = element.closest('.gwf-bio__carrossel-slide');
+				const item_id = product.dataset.prodId;
+				const item_name = product.dataset.prodName;
+				const item_price = product.dataset.prodPrice;
+				const item_position = product.dataset.index;
+
+				dataLayer.push({
+					event: 'gwf.linkbio.click_shelf',
+					gwf_event: 'click_shelf',
+					gwf_data: {
+						item_id: item_id,
+						item_name: item_name,
+						item_price: item_price,
+						item_position: item_position
+					}
+				});
 			});
 		});
 
 		// BOTÕES stores
-		document.querySelectorAll('.gwf-bio__store-btn').forEach(element => {
-			element.addEventListener('click', function (event) {
-				const linkId = event.currentTarget.id;
-				gwfDataLayer.events.push_SelectContent("store_button", linkId);
+		document.querySelector('#maps_store1_btn_spf').addEventListener('click', function (event) {
+			dataLayer.push({
+				event: 'gwf.linkbio.click_location_store1',
+				gwf_event: 'click_location_store1',
+				gwf_data: {
+					store_id: 'store1',
+					store_name: 'Vila Prel',
+					nav_app: 'google_maps' // google_maps | waze
+				}
+			});
+		});
+
+		// BOTÕES stores
+		document.querySelector('#waze_store1_btn_spf').addEventListener('click', function (event) {
+			dataLayer.push({
+				event: 'gwf.linkbio.click_location_store1',
+				gwf_event: 'click_location_store1',
+				gwf_data: {
+					store_id: 'store1',
+					store_name: 'Vila Prel',
+					nav_app: 'waze' // google_maps | waze
+				}
+			});
+		});
+
+		// BOTÕES stores
+		document.querySelector('#maps_store2_btn_spf').addEventListener('click', function (event) {
+			dataLayer.push({
+				event: 'gwf.linkbio.click_location_store2',
+				gwf_event: 'click_location_store2',
+				gwf_data: {
+					store_id: 'store2',
+					store_name: 'Capão Redondo',
+					nav_app: 'google_maps' // google_maps | waze
+				}
+			});
+		});
+
+		// BOTÕES stores
+		document.querySelector('#waze_store2_btn_spf').addEventListener('click', function (event) {
+			dataLayer.push({
+				event: 'gwf.linkbio.click_location_store2',
+				gwf_event: 'click_location_store2',
+				gwf_data: {
+					store_id: 'store2',
+					store_name: 'Capão Redondo',
+					nav_app: 'waze' // google_maps | waze
+				}
 			});
 		});
 

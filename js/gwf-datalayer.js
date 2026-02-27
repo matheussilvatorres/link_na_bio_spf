@@ -523,12 +523,15 @@
 				return;
 			}
 
+			const customEventId = window.gwfDataLayer.utils.generateUUID();
+
 			window.gwfDataLayer.utils.resetDataLayerGWF();
 
 			window.dataLayer.push({
 				event: 'gwf.linkbio.click_whatsapp_store1',
 				gwf_event: 'click_whatsapp_store1',
 				gwf_data: {
+					event_id: customEventId,
 					cta_location: ctaLocation
 				}
 			});
@@ -551,12 +554,15 @@
 				return;
 			}
 
+			const customEventId = window.gwfDataLayer.utils.generateUUID();
+			
 			window.gwfDataLayer.utils.resetDataLayerGWF();
 
 			window.dataLayer.push({
 				event: 'gwf.linkbio.click_ecommerce',
 				gwf_event: 'click_ecommerce',
 				gwf_data: {
+					event_id: customEventId,
 					cta_location: ctaLocation
 				}
 			});
@@ -579,12 +585,15 @@
 				return;
 			}
 
+			const customEventId = window.gwfDataLayer.utils.generateUUID();
+			
 			window.gwfDataLayer.utils.resetDataLayerGWF();
 
 			window.dataLayer.push({
 				event: 'gwf.linkbio.click_location_store1',
 				gwf_event: 'click_location_store1',
 				gwf_data: {
+					event_id: customEventId,
 					store_id: 'store1',
 					store_name: 'Vila Prel',
 					nav_app: navApp
@@ -609,12 +618,15 @@
 				return;
 			}
 
+			const customEventId = window.gwfDataLayer.utils.generateUUID();
+			
 			window.gwfDataLayer.utils.resetDataLayerGWF();
 
 			window.dataLayer.push({
 				event: 'gwf.linkbio.click_location_store2',
 				gwf_event: 'click_location_store2',
 				gwf_data: {
+					event_id: customEventId,
 					store_id: 'store2',
 					store_name: 'Capão Redondo',
 					nav_app: navApp
@@ -639,12 +651,15 @@
 				return;
 			}
 
+			const customEventId = window.gwfDataLayer.utils.generateUUID();
+			
 			window.gwfDataLayer.utils.resetDataLayerGWF();
 
 			window.dataLayer.push({
 				event: 'gwf.linkbio.click_social',
 				gwf_event: 'click_social',
 				gwf_data: {
+					event_id: customEventId,
 					social_network: socialNetwork
 				}
 			});
@@ -671,12 +686,15 @@
 				return;
 			}
 
+			const customEventId = window.gwfDataLayer.utils.generateUUID();
+			
 			window.gwfDataLayer.utils.resetDataLayerGWF();
 
 			window.dataLayer.push({
 				event: 'gwf.linkbio.click_shelf',
 				gwf_event: 'click_shelf',
 				gwf_data: {
+					event_id: customEventId,
 					item_id: itemId,
 					item_name: itemName,
 					item_price: itemPrice || null,

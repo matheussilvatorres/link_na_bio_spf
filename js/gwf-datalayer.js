@@ -666,7 +666,6 @@
 		 * @param {number} itemPosition - Posição no carrossel (1, 2 ou 3)
 		 */
 		push_clickShelf: function (itemId, itemName, itemPrice, itemPosition) {
-			debugger
 			if (!itemId || !itemName || !itemPosition) {
 				console.error('[GWF DataLayer] push_clickShelf - itemId, itemName e itemPosition obrigatórios');
 				return;
@@ -775,18 +774,18 @@
 		// Identifica o tipo de evento via atributo data-gwf-event
 		document.querySelectorAll('[data-gwf-event]').forEach(function (el) {
 			el.addEventListener('click', function (e) {
-			debugger
-				// Interrompe propagação para evitar duplo disparo
-				// quando o clique origina em elemento filho (i, span)
+				// Verifica se o clique originou em um elemento filho
+				// que também tem data-gwf-event — se sim, ignora
+				// para evitar duplo disparo em elementos aninhados
+				const clickedElement = e.target.closest('[data-gwf-event]');
+				if (clickedElement !== e.currentTarget) return;
+
 				e.stopPropagation();
 
-				// Garante que apenas o elemento com data-gwf-event processa o evento
-				// ignorando disparos que subiram de filhos para outros ancestrais rastreados
-				const target = e.currentTarget;
-				const eventType = target.dataset.gwfEvent;
+				const eventType = e.currentTarget.dataset.gwfEvent;
 
 				if (eventHandlers[eventType]) {
-					eventHandlers[eventType](target);
+					eventHandlers[eventType](e.currentTarget);
 				} else {
 					console.warn('[GWF DataLayer] Tipo de evento não mapeado:', eventType);
 				}
